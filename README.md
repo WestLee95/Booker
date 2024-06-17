@@ -1,12 +1,3 @@
-ng Started
-
-### Prerequisites
-
-- Python 3.x
-- Node.js
-- npm
-- MySQL
-
 ### Installation
 
 1. **Clone the repository**:
