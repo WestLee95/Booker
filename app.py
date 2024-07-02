@@ -1,47 +1,65 @@
-from flask import Flask, request, render_template, send_file, redirect, url_for
-from werkzeug.utils import secure_filename
 import os
-import PyPDF2
+from flask import Flask, request, render_template, send_file
+from werkzeug.utils import secure_filename
+from PyPDF2 import PdfFileReader
 from gtts import gTTS
-from pydub import AudioSegment
+import tempfile
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = 'uploads'
-app.config['ALLOWED_EXTENSIONS'] = {'pdf'}
 
-if not os.path.exists('uploads'):
-    os.makedirs('uploads')
+UPLOAD_FOLDER = 'uploads'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
+def convert_pdf_to_audio(filepath):
+    try:
+        with open(filepath, 'rb') as file:
+            reader = PdfFileReader(file)
+            number_of_pages = reader.numPages
+            text = ''
+            for page in range(number_of_pages):
+                text += reader.getPage(page).extract_text() + ' '
+            
+            # Debugging: Check extracted text
+            if not text.strip():
+                print("No text found in the PDF.")
+                return None
+            
+            print(f"Extracted text: {text[:100]}...")  # Print first 100 characters of extracted text
+            
+            tts = gTTS(text)
+            temp_audio_file = tempfile.NamedTemporaryFile(delete=False, suffix='.mp3')
+            temp_audio_file.close()
+            tts.save(temp_audio_file.name)
+            return temp_audio_file.name
+    except Exception as e:
+        print(f"Error during PDF to audio conversion: {e}")
+        return None
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         if 'file' not in request.files:
-            return redirect(request.url)
+            return "No file part"
+        
         file = request.files['file']
+        
         if file.filename == '':
-            return redirect(request.url)
-        if file and allowed_file(file.filename):
+            return "No selected file"
+        
+        if file and file.filename.endswith('.pdf'):
             filename = secure_filename(file.filename)
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             file.save(filepath)
             output_path = convert_pdf_to_audio(filepath)
-            return send_file(output_path, as_attachment=True)
+            
+            if output_path:
+                return send_file(output_path, as_attachment=True)
+            else:
+                return "Could not extract text from PDF or convert to audio."
     return render_template('index.html')
-
-def convert_pdf_to_audio(pdf_path):
-    text = ""
-    with open(pdf_path, 'rb') as file:
-        reader = PyPDF2.PdfFileReader(file)
-        for page_num in range(reader.numPages):
-            page = reader.getPage(page_num)
-            text += page.extractText()
-    tts = gTTS(text)
-    audio_path = os.path.splitext(pdf_path)[0] + '.mp3'
-    tts.save(audio_path)
-    return audio_path
 
 if __name__ == '__main__':
     app.run(debug=True)

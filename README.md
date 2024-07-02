@@ -1,6 +1,6 @@
 # Booker - PDF to Audiobook Converter
 
-Booker is a simple web application that allows users to convert PDF files into audiobooks using AI voice. This project uses Flask for the web application, PyPDF2 to read PDF files, and gTTS (Google Text-to-Speech) to convert text to speech.
+Booker is a simple web application that allows users to convert PDF files into audiobooks using AI voice. This project uses Flask for the web application, PyPDF2 to read PDF files, and gTTS (Google Text-to-Speech) to convert text to speech. Do note it has yet to be improved.
 
 ## Features
 

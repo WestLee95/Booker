@@ -3,34 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booker</title>
+    <title>Booker - PDF to Audiobook</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Booker Logo" class="logo">
-            <h1>Booker</h1>
-        </div>
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Booker Logo" class="logo">
+        <span class="title">Booker</span>
     </header>
     <main>
-        <form action="/" method="post" enctype="multipart/form-data">
-            <div class="dropzone">
-                <input type="file" name="file" accept=".pdf">
-            </div>
-            <button type="submit">Convert to Audio</button>
-        </form>
+        <div class="dropzone" onclick="document.getElementById('fileInput').click();">
+            <input id="fileInput" type="file" name="file" style="display:none;" onchange="handleFileUpload(event)">
+            <img src="{{ url_for('static', filename='images/dropzone.png') }}" alt="Dropzone Image" class="dropzone-image">
+        </div>
+        <button class="convert-button" onclick="uploadFile()">Choose File</button>
     </main>
     <footer>
-        <div class="footer-content">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Booker Logo" class="footer-logo">
-            <div class="footer-links">
-                <a href="#">About</a>
-                <a href="#">Products</a>
-                <a href="#">Pricing</a>
-                <a href="#">Terms</a>
-            </div>
+        <div>
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Booker Logo" class="footer-logo">
         </div>
+        <nav>
+            <a href="#">About</a> |
+            <a href="#">Products</a> |
+            <a href="#">Pricing</a> |
+            <a href="#">Terms</a>
+        </nav>
     </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

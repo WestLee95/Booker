@@ -1,84 +1,94 @@
 body {
     font-family: 'Courier New', Courier, monospace;
-    background-color: #1A2238;
+    background-color: #000000;
     color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    text-align: center;
     margin: 0;
+    padding: 0;
 }
 
 header {
-    background-color: #FF6A3D;
-    padding: 20px;
-    width: 100%;
-    text-align: center;
-}
-
-.logo-container {
+    background-color: #FFD700;
+    padding: 10px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    border-bottom: 5px solid #008000;
 }
 
-.logo {
+header .logo {
     height: 50px;
+    vertical-align: middle;
     margin-right: 10px;
 }
 
-h1 {
-    font-size: 2.5em;
-    margin: 0;
+header .title {
+    font-size: 2em;
+    color: #000000;
 }
 
 main {
-    margin: 20px 0;
+    padding: 4px;
 }
 
 .dropzone {
-    border: 2px dashed #9DAAF2;
-    padding: 20px;
-    width: 300px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-button {
-    background-color: #F4DB7D;
-    border: 2px solid #9DAAF2;
-    padding: 10px 20px;
-    font-size: 1em;
+    border: 5px solid #FFD700;
+    margin: 20px auto;
+    width: 400px;
+    height: 500px;
     cursor: pointer;
-    transition: box-shadow 0.3s;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-button:hover {
-    box-shadow: 0px 0px 15px 5px rgba(255, 106, 61, 0.75);
+.dropzone-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+button.convert-button {
+    background-color: #008000;
+    border: 2px solid #FFD700;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+button.convert-button:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
 }
 
 footer {
-    background-color: #FF6A3D;
-    padding: 20px;
+    background-color: #FFD700;
+    padding: 5px;
+    position: fixed;
     width: 100%;
-    text-align: center;
+    bottom: 0;
+    border-top: 5px solid #008000;
 }
 
-.footer-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.footer-logo {
+footer .footer-logo {
     height: 30px;
-    margin-bottom: 10px;
+    vertical-align: middle;
 }
 
-.footer-links a {
-    color: #FFFFFF;
+footer nav {
+    margin-top: 10px;
+}
+
+footer nav a {
+    color: #000000;
     text-decoration: none;
     margin: 0 10px;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
 }
