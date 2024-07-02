@@ -1,123 +1,113 @@
-### Installation
+# Booker - PDF to Audiobook Converter
 
-1. **Clone the repository**:
-    ```bash
-    git clone https://github.com/yourusername/booker.git
-    cd booker
-    ```
+Booker is a simple web application that allows users to convert PDF files into audiobooks using AI voice. This project uses Flask for the web application, PyPDF2 to read PDF files, and gTTS (Google Text-to-Speech) to convert text to speech.
 
-2. **Set up the virtual environment**:
-    ```bash
-    python -m venv venv
-    source venv/bin/activate
-    ```
+## Features
 
-3. **Install Python dependencies**:
-    ```bash
-    pip install django djangorestframework mysqlclient
-    ```
+- Upload a PDF file and convert it to an MP3 audiobook.
+- Simple and intuitive UI design.
+- Secure file upload and handling.
 
-4. **Install Tailwind CSS**:
-    ```bash
-    npm install -D tailwindcss
-    npx tailwindcss init
-    ```
+## Project Structure
 
-5. **Configure Tailwind CSS**:
-    - Edit `tailwind.config.js`:
-      ```javascript
-      module.exports = {
-        content: [
-          './templates/**/*.html',
-          './static/js/**/*.js',
-        ],
-        theme: {
-          extend: {},
-        },
-        plugins: [],
-      }
-      ```
-    - Create a `static/css/tailwind.css` file:
-      ```css
-      @tailwind base;
-      @tailwind components;
-      @tailwind utilities;
-      ```
+```
+booker/
+├── app.py
+├── requirements.txt
+├── static/
+│   ├── css/
+│   │   └── styles.css
+│   └── images/
+│       └── logo.png
+├── templates/
+│   └── index.html
+└── uploads/
+```
 
-6. **Build Tailwind CSS**:
-    ```bash
-    npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/main.css --watch
-    ```
+## Requirements
 
-7. **Configure MySQL database**:
-    - Update `booker/settings.py` with your database credentials:
-      ```python
-      DATABASES = {
-          'default': {
-              'ENGINE': 'django.db.backends.mysql',
-              'NAME': 'booker',
-              'USER': 'yourusername',
-              'PASSWORD': 'yourpassword',
-              'HOST': 'localhost',
-              'PORT': '3306',
-          }
-      }
-      ```
+- Python 3.7 or higher
+- Flask
+- PyPDF2
+- gTTS
+- pydub
 
-8. **Run migrations**:
-    ```bash
-    python manage.py makemigrations
-    python manage.py migrate
-    ```
+## Setup Instructions
 
-9. **Create a superuser**:
-    ```bash
-    python manage.py createsuperuser
-    ```
+### 1. Clone the Repository
 
-10. **Start the Django development server**:
-    ```bash
-    python manage.py runserver
-    ```
+```bash
+git clone https://github.com/WestLee95/Booker.git
+cd booker
+```
 
-### Running the React Frontend
+### 2. Set Up the Virtual Environment
 
-1. **Navigate to the frontend directory**:
-    ```bash
-    cd frontend
-    ```
+```bash
+python3 -m venv venv
+source venv/bin/activate   # On Windows use `venv\Scripts\activate`
+```
 
-2. **Install React dependencies**:
-    ```bash
-    npm install
-    ```
+### 3. Install Dependencies
 
-3. **Start the React development server**:
-    ```bash
-    npm start
-    ```
+```bash
+pip install -r requirements.txt
+```
 
-### Build React for Production
+### 4. Run the Flask Application
 
-1. **Build the React app**:
-    ```bash
-    npm run build
-    ```
+```bash
+python app.py
+```
 
-2. **Move the build files to Django static directory**:
-    ```bash
-    cp -r build/* ../static/
-    ```
+### 5. Access the Application
 
-### Project Structure Details
+Open your web browser and go to `http://127.0.0.1:5000`.
 
-- **main/models.py**: Contains the database models for students, rooms, etc.
-- **main/serializers.py**: Contains the serializers for the REST API.
-- **main/views.py**: Contains the viewsets for the REST API and the main view for serving the React app.
-- **main/urls.py**: Contains the URL routing for the API and main view.
-- **templates/**: Contains the Django templates.
-- **static/**: Contains the static files including the compiled CSS from Tailwind and the React build.
+## Usage
 
-### Acknowledgments
+1. **Upload a PDF File**: 
+   - Go to the home page.
+   - Upload a PDF file using the dropzone provided.
 
-- Thanks to the Django, Tailwind CSS, and React communities for their fantastic tools and documentation.
+2. **Convert to Audio**: 
+   - Click on the "Convert to Audio" button.
+   - The application will process the PDF and provide a downloadable MP3 file.
+
+## UI Design
+
+- **Header**: Contains the logo and the application name "Booker".
+- **Main Section**: Contains the file upload dropzone and the "Convert to Audio" button.
+- **Footer**: Contains placeholder links like About, Products, Pricing, Terms, etc.
+
+## Color Scheme
+
+- Background: `#1A2238`
+- Dropzone Border and Button Border: `#9DAAF2`
+- Button Background: `#F4DB7D`
+- Header and Footer Background: `#FF6A3D`
+
+## Technologies Used
+
+- **Flask**: Web framework for the application.
+- **PyPDF2**: For reading PDF files.
+- **gTTS**: For converting text to speech.
+- **pydub**: For handling audio file manipulation.
+- **HTML/CSS**: For the frontend.
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature-branch`.
+3. Make your changes and commit them: `git commit -m 'Add new feature'`.
+4. Push to the branch: `git push origin feature-branch`.
+5. Submit a pull request.
+
+
+## Acknowledgements
+
+- [Flask](https://flask.palletsprojects.com/)
+- [PyPDF2](https://pythonhosted.org/PyPDF2/)
+- [gTTS](https://gtts.readthedocs.io/en/latest/)
+- [pydub](https://github.com/jiaaro/pydub)
+```
