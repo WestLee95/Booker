@@ -1,0 +1,84 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #1A2238;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    background-color: #FF6A3D;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+main {
+    margin: 20px 0;
+}
+
+.dropzone {
+    border: 2px dashed #9DAAF2;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #F4DB7D;
+    border: 2px solid #9DAAF2;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+button:hover {
+    box-shadow: 0px 0px 15px 5px rgba(255, 106, 61, 0.75);
+}
+
+footer {
+    background-color: #FF6A3D;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-logo {
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 10px;
+}
