@@ -103,11 +103,4 @@ Open your web browser and go to `http://127.0.0.1:5000`.
 4. Push to the branch: `git push origin feature-branch`.
 5. Submit a pull request.
 
-
-## Acknowledgements
-
-- [Flask](https://flask.palletsprojects.com/)
-- [PyPDF2](https://pythonhosted.org/PyPDF2/)
-- [gTTS](https://gtts.readthedocs.io/en/latest/)
-- [pydub](https://github.com/jiaaro/pydub)
 ```
