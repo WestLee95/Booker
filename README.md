@@ -11,7 +11,7 @@ Booker is a simple web application that allows users to convert PDF files into a
 ## Project Structure
 
 ```
-booker/
+Booker/
 ├── app.py
 ├── requirements.txt
 ├── static/
@@ -38,7 +38,7 @@ booker/
 
 ```bash
 git clone https://github.com/WestLee95/Booker.git
-cd booker
+cd Booker
 ```
 
 ### 2. Set Up the Virtual Environment
