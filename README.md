@@ -1,106 +1,121 @@
-# Booker - PDF to Audiobook Converter
+Alright Mayor 🤠, let’s whip up a clean, sharp, and slightly friendly `README.md` for your **Booker** project—professional enough to impress the dev folks, but still easy on the eyes and vibes.
 
-Booker is a simple web application that allows users to convert PDF files into audiobooks using AI voice. This project uses Flask for the web application, PyPDF2 to read PDF files, and gTTS (Google Text-to-Speech) to convert text to speech. Do note it has yet to be improved.
+---
 
-## Features
+````markdown
+# 📖 Booker - Turn PDFs into Audio, Instantly
 
-- Upload a PDF file and convert it to an MP3 audiobook.
-- Simple and intuitive UI design.
-- Secure file upload and handling.
+[Live Demo 🚀](https://booker-pdf-to-audio.onrender.com/)  
+[![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://www.python.org/downloads/release/python-3110/)  
+![Screenshot](./screenshot.png)
 
-## Project Structure
+---
+
+## ✨ Overview
+
+**Booker** is a lightweight web app that lets users convert PDF documents into audio with just a few clicks. Whether you're on the move, multitasking, or simply prefer listening over reading—Booker makes it easy to *read with your ears*.
+
+Built with Python 3.11 and Flask, the app is designed for simplicity, speed, and accessibility.
+
+---
+
+## 🛠 Tech Stack
+
+- **Backend**: Python 3.11, Flask
+- **Frontend**: HTML, CSS (with a sprinkle of minimal styling)
+- **Text-to-Speech**: pyttsx3 (offline TTS engine)
+- **File Handling**: PDFMiner for extracting text from PDFs
+- **Hosting**: Render
+
+---
+
+## 🚀 Features
+
+- 📂 Upload a PDF file
+- 🔊 Convert the entire document into audio
+- 💾 Download the audio as an MP3
+- ⚡ Simple, responsive UI for all screen sizes
+- 💬 Offline-friendly text-to-speech (no external APIs!)
+
+---
+
+## 📸 Screenshot
+
+![Booker UI](./assets/screenshot.png)
+
+---
+
+## 🧠 How It Works
+
+1. User uploads a `.pdf` file.
+2. App extracts text from the PDF.
+3. Text is fed into `pyttsx3` to generate speech.
+4. The audio is saved as an `.mp3` and made available for download.
+
+---
+
+## 🧰 Local Setup
+
+Want to run it locally? Easy.
+
+```bash
+# Clone the repo
+git clone https://github.com/WestLee95/Booker.git
+cd Booker
+
+# Create and activate a virtual environment (optional but recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the app
+python app.py
+````
+
+Then open your browser and go to:
+**`http://localhost:5000`**
+
+---
+
+## 📂 Folder Structure
 
 ```
 Booker/
-├── app.py
-├── requirements.txt
-├── static/
-│   ├── css/
-│   │   └── styles.css
-│   └── images/
-│       └── logo.png
-├── templates/
-│   └── index.html
-└── uploads/
+│
+├── static/            # CSS, JS, and static assets
+├── templates/         # HTML files (Flask views)
+├── uploads/           # Temporarily stores uploaded PDFs
+├── audio/             # Stores generated audio files
+├── app.py             # Main Flask application
+├── requirements.txt   # Python dependencies
+└── README.md          # You're here
 ```
 
-## Requirements
+---
 
-- Python 3.7 or higher
-- Flask
-- PyPDF2
-- gTTS
-- pydub
+## ⚠️ Known Limitations
 
-## Setup Instructions
+* Only supports English PDFs (for now).
+* Audio generation may take longer for large files.
+* Some complex PDF layouts (tables, images) might not read well.
 
-### 1. Clone the Repository
+---
 
-```bash
-git clone https://github.com/WestLee95/Booker.git
-cd Booker
-```
+## 💡 Future Plans
 
-### 2. Set Up the Virtual Environment
+* Multilingual support
+* Voice customization (pitch, speed, gender)
+* Save user preferences
+* Bookmarking or text highlighting
 
-```bash
-python3 -m venv venv
-source venv/bin/activate   # On Windows use `venv\Scripts\activate`
-```
+---
 
-### 3. Install Dependencies
 
-```bash
-pip install -r requirements.txt
-```
+## 📄 License
 
-### 4. Run the Flask Application
+This project is licensed under the [MIT License](./LICENSE).
 
-```bash
-python app.py
-```
+---
 
-### 5. Access the Application
-
-Open your web browser and go to `http://127.0.0.1:5000`.
-
-## Usage
-
-1. **Upload a PDF File**: 
-   - Go to the home page.
-   - Upload a PDF file using the dropzone provided.
-
-2. **Convert to Audio**: 
-   - Click on the "Convert to Audio" button.
-   - The application will process the PDF and provide a downloadable MP3 file.
-
-## UI Design
-
-- **Header**: Contains the logo and the application name "Booker".
-- **Main Section**: Contains the file upload dropzone and the "Convert to Audio" button.
-- **Footer**: Contains placeholder links like About, Products, Pricing, Terms, etc.
-
-## Color Scheme
-
-- Background: `#1A2238`
-- Dropzone Border and Button Border: `#9DAAF2`
-- Button Background: `#F4DB7D`
-- Header and Footer Background: `#FF6A3D`
-
-## Technologies Used
-
-- **Flask**: Web framework for the application.
-- **PyPDF2**: For reading PDF files.
-- **gTTS**: For converting text to speech.
-- **pydub**: For handling audio file manipulation.
-- **HTML/CSS**: For the frontend.
-
-## Contributing
-
-1. Fork the repository.
-2. Create a new branch: `git checkout -b feature-branch`.
-3. Make your changes and commit them: `git commit -m 'Add new feature'`.
-4. Push to the branch: `git push origin feature-branch`.
-5. Submit a pull request.
-
-```
