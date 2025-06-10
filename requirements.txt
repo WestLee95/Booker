@@ -1,5 +1,5 @@
-Flask==2.3.3
-PyPDF2
-gTTS
-pydub
-Werkzeug==2.3.7
+Flask==2.0.2
+PyPDF2==1.26.0
+gTTS==2.2.3
+pydub==0.25.1
+werkzeug==2.0.3
