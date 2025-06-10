@@ -1,8 +1,3 @@
-Alright Mayor 🤠, let’s whip up a clean, sharp, and slightly friendly `README.md` for your **Booker** project—professional enough to impress the dev folks, but still easy on the eyes and vibes.
-
----
-
-````markdown
 # 📖 Booker - Turn PDFs into Audio, Instantly
 
 [Live Demo 🚀](https://booker-pdf-to-audio.onrender.com/)  
@@ -72,7 +67,7 @@ pip install -r requirements.txt
 
 # Run the app
 python app.py
-````
+```
 
 Then open your browser and go to:
 **`http://localhost:5000`**
