@@ -1,8 +1,9 @@
 # 📖 Booker - Turn PDFs into Audio, Instantly
 
-[Live Demo 🚀](https://booker-pdf-to-audio.onrender.com/)  
-[![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://www.python.org/downloads/release/python-3110/)  
-![Screenshot](./screenshot.png)
+[Live Demo 🚀](https://booker-pdf-to-audio.onrender.com/)   [![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://www.python.org/downloads/release/python-3110/) 
+
+
+#![Booker Screenshot](./assets/Screenshot.png)
 
 ---
 
@@ -33,11 +34,6 @@ Built with Python 3.11 and Flask, the app is designed for simplicity, speed, and
 - 💬 Offline-friendly text-to-speech (no external APIs!)
 
 ---
-
-## 📸 Screenshot
-
-![Booker UI](./assets/screenshot.png)
-
 ---
 
 ## 🧠 How It Works
